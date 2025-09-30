@@ -1,0 +1,22 @@
+services:
+  btcrpc:
+    environment:
+      - DOCKER_COMPOSE_FILE_TYPE=original
+      - TZ=Asia/Taipei
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: btcrpc-devcontainer:1.0.0
+    container_name: btcrpc-devcontainer
+    volumes:
+      - ../:/btcrpc
+    working_dir: /btcrpc
+    # network_mode: host
+    networks:
+      - dev
+    tty: true
+
+
+networks:
+  dev:
+    external: true

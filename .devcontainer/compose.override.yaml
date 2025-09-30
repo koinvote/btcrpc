@@ -1,0 +1,8 @@
+services:
+  btcrpc:
+    environment:
+      - DOCKER_COMPOSE_FILE_TYPE=override
+    ports:
+      - 8080:8080
+    entrypoint: /bin/bash
+    command: -c "env GOOS=linux CGO_ENABLED=1 go build -o btcrpc /btcrpc/ && /btcrpc/btcrpc"
