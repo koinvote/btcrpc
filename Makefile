@@ -32,7 +32,7 @@ help:
 	@echo "  make check-connection - 檢查 Bitcoin Core 連線"
 	@echo ""
 	@echo "確保 Bitcoin Core 在以下設定下運行:"
-	@echo "  RPC URL: http://bitcoin-core:18443"
+	@echo "  RPC URL: http://bitcoin-core-regtest:18443"
 	@echo "  RPC User: bitcoinrpc"
 	@echo "  RPC Password: test_password"
 
@@ -112,4 +112,4 @@ mod-check:
 # 檢查連線
 check-connection:
 	@echo "檢查 Bitcoin Core 連線..."
-	@curl -s --user bitcoinrpc:test_password --data-binary '{"jsonrpc":"1.0","id":"test","method":"getblockchaininfo","params":[]}' -H 'content-type: text/plain;' http://bitcoin-core:18443/ > /dev/null && echo "✓ Bitcoin Core 連線成功" || echo "❌ Bitcoin Core 連線失敗"
+	@curl -s --user bitcoinrpc:test_password --data-binary '{"jsonrpc":"1.0","id":"test","method":"getblockchaininfo","params":[]}' -H 'content-type: text/plain;' http://bitcoin-core-regtest:18443/ > /dev/null && echo "✓ Bitcoin Core 連線成功" || echo "❌ Bitcoin Core 連線失敗"

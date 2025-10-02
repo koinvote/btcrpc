@@ -136,7 +136,7 @@ scenario_tests/
 1. **Bitcoin Core 設定：**
    ```bash
    # regtest 模式設定
-   RPC URL: http://bitcoin-core:18443
+   RPC URL: http://bitcoin-core-regtest:18443
    RPC User: bitcoinrpc
    RPC Password: test_password
    Network: regtest
@@ -241,7 +241,7 @@ make help
    curl -s --user bitcoinrpc:test_password \
         --data-binary '{"jsonrpc":"1.0","id":"test","method":"getblockchaininfo","params":[]}' \
         -H 'content-type: text/plain;' \
-        http://bitcoin-core:18443/
+        http://bitcoin-core-regtest:18443/
    ```
 
 2. **查看錢包列表：**
@@ -249,7 +249,7 @@ make help
    curl -s --user bitcoinrpc:test_password \
         --data-binary '{"jsonrpc":"1.0","id":"test","method":"listwallets","params":[]}' \
         -H 'content-type: text/plain;' \
-        http://bitcoin-core:18443/
+        http://bitcoin-core-regtest:18443/
    ```
 
 ## � 測試特色
