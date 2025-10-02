@@ -6,7 +6,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/koinvote/btcrpc"
+	"github.com/koinvote/btcrpc/scenario_tests/shared"
 )
 
 // FeeOptimizationScenarioTest 測試手續費估算和交易優化情境
@@ -18,11 +18,7 @@ import (
 // 5. 分析手續費與交易大小的關係
 // 6. 驗證網絡擁堵情況下的手續費策略
 func FeeOptimizationScenarioTest() {
-	client := btcrpc.NewClient(
-		"http://bitcoin-core:18443",
-		"bitcoinrpc",
-		"test_password",
-	)
+	client := shared.NewTestClient()
 
 	fmt.Println("=== 手續費優化情境測試 ===")
 

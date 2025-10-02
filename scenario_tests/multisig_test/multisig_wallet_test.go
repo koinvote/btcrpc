@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/koinvote/btcrpc"
+	"github.com/koinvote/btcrpc/scenario_tests/shared"
 )
 
 // MultisigWalletScenarioTest 測試多重簽名錢包情境
@@ -17,11 +18,7 @@ import (
 // 5. 模擬多方簽名流程
 // 6. 驗證多重簽名交易的安全性
 func MultisigWalletScenarioTest() {
-	client := btcrpc.NewClient(
-		"http://bitcoin-core:18443",
-		"bitcoinrpc",
-		"test_password",
-	)
+	client := shared.NewTestClient()
 
 	fmt.Println("=== 多重簽名錢包情境測試 ===")
 

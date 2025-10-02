@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/koinvote/btcrpc"
+	"github.com/koinvote/btcrpc/scenario_tests/shared"
 )
 
 // MultiWalletTransferScenarioTest 測試多錢包間轉帳情境
@@ -19,11 +19,7 @@ import (
 // 7. 最終驗證所有餘額
 func MultiWalletTransferScenarioTest() {
 	// Bitcoin Core RPC 客戶端配置
-	client := btcrpc.NewClient(
-		"http://bitcoin-core:18443", // regtest 模式
-		"bitcoinrpc",
-		"test_password",
-	)
+	client := shared.NewTestClient()
 
 	fmt.Println("=== 多錢包轉帳情境測試 ===")
 

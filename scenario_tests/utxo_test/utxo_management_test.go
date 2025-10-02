@@ -6,7 +6,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/koinvote/btcrpc"
+	"github.com/koinvote/btcrpc/scenario_tests/shared"
 )
 
 // UTXOManagementScenarioTest 測試 UTXO 管理情境
@@ -17,11 +17,7 @@ import (
 // 4. 驗證 UTXO 的變化和交易費用計算
 // 5. 測試地址重用和隱私保護
 func UTXOManagementScenarioTest() {
-	client := btcrpc.NewClient(
-		"http://bitcoin-core:18443",
-		"bitcoinrpc",
-		"test_password",
-	)
+	client := shared.NewTestClient()
 
 	fmt.Println("=== UTXO 管理情境測試 ===")
 

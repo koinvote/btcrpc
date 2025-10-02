@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/koinvote/btcrpc"
+	"github.com/koinvote/btcrpc/scenario_tests/shared"
 )
 
 // BlockchainMonitoringScenarioTest 測試區塊鏈監控和交易追蹤情境
@@ -17,11 +17,7 @@ import (
 // 5. 模擬區塊鏈分析和交易圖譜構建
 // 6. 測試異常情況處理和網絡監控
 func BlockchainMonitoringScenarioTest() {
-	client := btcrpc.NewClient(
-		"http://bitcoin-core:18443",
-		"bitcoinrpc",
-		"test_password",
-	)
+	client := shared.NewTestClient()
 
 	fmt.Println("=== 區塊鏈監控和交易追蹤情境測試 ===")
 
